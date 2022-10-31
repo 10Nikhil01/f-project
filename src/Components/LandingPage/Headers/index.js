@@ -19,7 +19,7 @@ export default function Headers() {
         alignItems: "center",
         justifyContent: "center",
         flexDirection: "column",
-        margin: "0px",
+        padding: "0 0 20px 0",
         // alignContent:"center"
       }}
       maxWidth="xl"
@@ -62,7 +62,7 @@ export default function Headers() {
             lineHeight: "6vh",
             textAlign: "center",
             color: "#000000",
-            marginTop: { xs: "-3vh", md: "10vh" },
+            marginTop: { xs: "3vh", md: "10vh" },
           }}
         >
           You Deserve

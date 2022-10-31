@@ -13,17 +13,17 @@ function LandingPage() {
         <Headers />
       </div>
 
-      <div >
+      <div>
         <Section2 />
       </div>
-
-      <Section3 />
+      <div>
+        <Section3 />
+      </div>
 
       <div>
         <BannerImage />
       </div>
 
-      {/* <div>Never Want to Miss Any Job News?</div> */}
       <Footer />
     </div>
   );

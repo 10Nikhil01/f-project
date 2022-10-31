@@ -6,8 +6,7 @@
   align-items: center;
 }
 .section3 .heading {
-  margin-top: 0;
-  margin-bottom: 100px;
+  margin: 20px 0 50px 0;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 700;
@@ -18,7 +17,7 @@
   cursor: default;
 }
 .section3 .job-container {
-  margin: 0 139px 50px 139px;
+
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -33,7 +32,7 @@
   height: 50px;
   border: 2px solid #4943da;
   border-radius: 20px;
-  margin-bottom: 50px;
+  margin: 50px 0;
   font-family: "Roboto";
   font-style: normal;
   font-weight: 400;
