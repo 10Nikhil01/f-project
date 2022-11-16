@@ -28,10 +28,10 @@ const MenuProps = {
 };
 
 function CandidateONboarding() {
-  let navigate = useNavigate();
+  const navigate = useNavigate();
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   const [candidateInfo, setCandidateInfo] = React.useState({
-    name: "",
+    name: loggedInUser.displayName,
     email: loggedInUser.email,
     phone: "",
     skills: [],
@@ -72,57 +72,41 @@ function CandidateONboarding() {
       const docRef = await setDoc(doc(db, "usersData", userId), {
         ...candidateInfo,
         userId: userId,
-        step: 200,
+        step: 2,
         user_type: "candidate",
       });
-
-      navigate("/candidate/profile");
     } catch (e) {
       alert("Error occored");
       console.error("Error adding document: ", e);
     }
-
-    setCandidateInfo({
-      name: "",
-      email: "",
-      phone: "",
-      skills: [],
-      domain: [],
-      socialMedia: {
-        linkedIn: "",
-        github: "",
-        twitter: "",
-        instagram: "",
-      },
-    });
+    navigate("/candidate/profile");
   };
   return (
     <div
       style={{
         backgroundColor: "#e5e5e5",
-        minHeight: "100vh",
-        paddingTop: "50px",
+        height: "100vh",
       }}
     >
       <form onSubmit={(e) => submitInfo(e)}>
         <div
           style={{
-            maxWidth: "1100px",
-            margin: "50px 20px 0 20px ",
-            padding: "20px",
-            paddingTop: "50px",
-            borderRadius: "20px",
+            borderRadius: "50px",
           }}
         >
           <Grid
             container
-            spacing={3}
+            spacing={2}
             maxWidth="80%"
             p={4}
             sx={{
               backgroundColor: "#FFFFFF",
+              borderRadius: "20px",
               boxShadow: "0px 0px 15px #DCD7D7",
               margin: "auto",
+              display: "flex",
+              justifyContent: "center",
+              alignItem: "center",
               fontSize: "15px",
             }}
           >
@@ -145,7 +129,7 @@ function CandidateONboarding() {
             </Grid>
             <Grid item xs={12} md={6}>
               <label>
-                email<span style={{ color: "red" }}>*</span>
+                Email<span style={{ color: "red" }}>*</span>
               </label>
               <TextField
                 disabled
@@ -362,9 +346,8 @@ function CandidateONboarding() {
               <Button
                 variant="contained"
                 color="secondary"
-                size="small"
+                size="large"
                 type="submit"
-                sx={{ float: "right", width: "150px" }}
               >
                 Submit
               </Button>

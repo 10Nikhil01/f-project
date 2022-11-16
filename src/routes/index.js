@@ -70,7 +70,6 @@ function Navs() {
                 </CandidateHOC>
               }
             />
-
             <Route
               path="candidate/applications"
               element={

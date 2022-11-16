@@ -10,7 +10,7 @@ function ClientOnboarding() {
   const navigate = useNavigate();
   const loggedInUser = JSON.parse(localStorage.getItem("user"));
   const [clientInfo, setClientInfo] = React.useState({
-    name: "",
+    name: loggedInUser.displayName,
     email: loggedInUser.email,
     phone: "",
     company: "",
